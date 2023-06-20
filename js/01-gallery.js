@@ -33,10 +33,10 @@ function onClickGalleryItem(e) {
   }
   e.preventDefault();
 
-  const imageForModal = e.target.dataset.source;
+  const imageSrcForModal = e.target.dataset.source;
   const imageAlt = e.target.alt;
   
-  modalImg.src = imageForModal;
+  modalImg.src = imageSrcForModal;
   modalImg.alt = imageAlt;
 
   instance.show();
