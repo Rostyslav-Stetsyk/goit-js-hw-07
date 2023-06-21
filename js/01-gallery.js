@@ -3,7 +3,10 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryRef = document.querySelector('ul.gallery');
 function createGallery(galleryItems) {
-    const galleryMarkup = galleryItems.map(createGalleryElement).join('');
+  const galleryMarkup = galleryItems
+    .map(createGalleryElement)
+    .join('');
+  
     galleryRef.insertAdjacentHTML('afterbegin', galleryMarkup)
 };
 
@@ -28,7 +31,7 @@ const modalImg = instance.element().querySelector('.js-modal-img');
 galleryRef.addEventListener('click', onClickGalleryItem);
 
 function onClickGalleryItem(e) {
-  if (!e.target.classList.contains('gallery__image')) {
+  if (!e.target.closest('.gallery__item')) {
     return;
   }
   e.preventDefault();
